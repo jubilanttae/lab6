@@ -36,14 +36,3 @@ lab6/
 ├── pom.xml                       # Maven configuration
 └── app_logs.txt                  # Application logs
 ```
-
-## Getting Started
-
-1. Ensure Java 26 is installed
-2. Clone the repository
-3. Build with Maven: `mvn clean package`
-4. Run the application: `mvn javafx:run`
-
-## Notes
-
-The repository description indicates this is a `.net & java project repository`, though the current codebase is written in Java.
