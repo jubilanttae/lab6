@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="650.0" minWidth="1050.0" prefHeight="750.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controller.MainController">
+
+    <top>
+        <VBox alignment="CENTER" spacing="10.0" style="-fx-background-color: #f4f4f4;">
+            <children>
+                <HBox alignment="CENTER_LEFT" prefHeight="80.0" spacing="20.0" style="-fx-padding: 10 20 10 20;">
+                    <children>
+                        <ImageView fitHeight="60.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@pwr_logo.png" />
+                            </image>
+                        </ImageView>
+                        <Separator orientation="VERTICAL" />
+                        <Label text="Witaj w aplikacji obrazkoedytoinator 13.0.2!">
+                            <font>
+                                <Font name="System Bold" size="24.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </HBox>
+                <Separator prefWidth="200.0" />
+            </children>
+        </VBox>
+    </top>
+
+    <center>
+        <HBox alignment="CENTER" spacing="30.0" BorderPane.alignment="CENTER">
+            <children>
+                <VBox alignment="TOP_CENTER" spacing="10.0" HBox.hgrow="ALWAYS">
+                    <children>
+                        <Label text="Obraz oryginalny" textFill="#666666">
+                            <font><Font name="System Italic" size="14.0" /></font>
+                        </Label>
+                        <ImageView fx:id="originalImageView" fitHeight="450.0" fitWidth="500.0" pickOnBounds="true" preserveRatio="true" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 10, 0, 0, 0);" />
+                    </children>
+                </VBox>
+                <Separator orientation="VERTICAL" />
+                <VBox alignment="TOP_CENTER" spacing="10.0" HBox.hgrow="ALWAYS">
+                    <children>
+                        <Label text="Obraz zmodyfikowany" textFill="#666666">
+                            <font><Font name="System Italic" size="14.0" /></font>
+                        </Label>
+                        <ImageView fx:id="processedImageView" fitHeight="450.0" fitWidth="500.0" pickOnBounds="true" preserveRatio="true" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 10, 0, 0, 0);" />
+                    </children>
+                </VBox>
+            </children>
+            <padding>
+                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+            </padding>
+        </HBox>
+    </center>
+
+    <bottom>
+        <VBox>
+            <children>
+                <HBox alignment="CENTER" prefHeight="90.0" spacing="15.0" style="-fx-background-color: #eeeeee;">
+                    <children>
+                        <Button fx:id="btnLoad" mnemonicParsing="false" onAction="#handleLoadImage" prefHeight="40.0" prefWidth="120.0" text="📁 Wczytaj" />
+                        <Separator orientation="VERTICAL" />
+
+                        <Button fx:id="btnRotateLeft" disable="true" onAction="#handleRotateLeft" prefHeight="40.0" text="⟲ Obróć 90°" />
+                        <Button fx:id="btnRotateRight" disable="true" onAction="#handleRotateRight" prefHeight="40.0" text="⟳ Obróć 90°" />
+                        <Button fx:id="btnScale" disable="true" onAction="#handleScaleImage" prefHeight="40.0" text="⤢ Skaluj" />
+
+                        <Separator orientation="VERTICAL" />
+                        <ComboBox fx:id="opComboBox" prefHeight="35.0" prefWidth="160.0" />
+                        <Button fx:id="btnExecute" disable="true" mnemonicParsing="false" onAction="#handleExecute" prefHeight="40.0" prefWidth="90.0" style="-fx-background-color: #e3f2fd;" text="Wykonaj" />
+
+                        <Separator orientation="VERTICAL" />
+                        <Button fx:id="btnSave" disable="true" mnemonicParsing="false" onAction="#handleSaveImage" prefHeight="40.0" prefWidth="120.0" style="-fx-background-color: #e8f5e9;" text="Zapisz" />
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER_RIGHT" prefHeight="30.0" style="-fx-background-color: #333333; -fx-padding: 0 20 0 0;">
+                    <children>
+                        <Label text="Julia Wilkosz | 280040 | PWr" textFill="WHITE">
+                            <font><Font size="11.0" /></font>
+                        </Label>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </bottom>
+</BorderPane>
